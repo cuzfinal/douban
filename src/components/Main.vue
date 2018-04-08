@@ -11,7 +11,7 @@
       <categories :categories="categories"></categories>
     </div>
     <div class="footer">
-      <h1>豆瓣</h1>
+      <p>豆瓣</p>
     </div>
   </div>
 </template>
@@ -69,11 +69,13 @@ export default {
   }
   .footer{
     width: 100%;
-    padding-bottom: 20%;
-    text-align: center;
     color: #42bd56;
-    h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
       font-weight: lighter;
+      font-size: 2.8rem;
     }
   }
 }

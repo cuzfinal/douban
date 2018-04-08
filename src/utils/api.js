@@ -17,5 +17,20 @@ export default {
                 }
             })
         })
+    },
+    /**
+     * 
+     * @param {String} bookId 图书Id
+     */
+    GetBookInfoById (bookId) {
+        return new Promise((resolve, reject) => {
+            jsonp(`${baseUrl}book/${bookId}`, null, (err, data) => {
+                if (err) {
+                    console.error(err)
+                } else {
+                    resolve(data)
+                }
+            })
+        })
     }
 }

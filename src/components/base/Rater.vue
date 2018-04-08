@@ -1,14 +1,18 @@
 <template>
   <div class='rater'>
       <span v-for="(val,index) in slots" :key="index" :class="{gray: score<val*2,star: score>=val*2}"></span>
-      <span class="score">{{score}}</span>
+      <span class="score" v-show="showScore">{{score}}</span>
   </div>
 </template>
 <script>
 export default {
     name: 'Rater',
     props: {
-        rate: Number
+        rate: Number,
+        showScore: {
+            type: Boolean,
+            default: true
+        }
     },
     data () {
         return {
