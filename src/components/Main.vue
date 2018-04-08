@@ -11,7 +11,7 @@
       <categories :categories="categories"></categories>
     </div>
     <div class="footer">
-      
+      <h1>豆瓣</h1>
     </div>
   </div>
 </template>
@@ -44,11 +44,8 @@ export default {
   },
   methods: {
     getBooks () {
-      utils.GetBooksByTag('科幻类').then( r => {
-        debugger
-        this.booksXg = r.books
-        })
-      utils.GetBooksByTag('非科幻类').then( r => this.booksFxg = r.books)
+      utils.GetBooksByTag('虚构类').then( r => this.booksXg = r.books)
+      utils.GetBooksByTag('非虚构类').then( r => this.booksFxg = r.books)
     }
   }
 }
@@ -72,7 +69,12 @@ export default {
   }
   .footer{
     width: 100%;
-    padding-bottom: 50%;
+    padding-bottom: 20%;
+    text-align: center;
+    color: #42bd56;
+    h1{
+      font-weight: lighter;
+    }
   }
 }
 </style>

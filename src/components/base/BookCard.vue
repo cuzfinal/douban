@@ -8,10 +8,10 @@
         <ul class="row items">
             <li class="item item_book" v-for="book in books" :key="book.id">
                 <router-link :to="{name: 'BookDetail', params:{bookId: book.id}}">
-                    <div class="item-poster" :style="`background-image: url(${book.image})`"></div>
-                    <span class="item-title">{{ book.subtitle }}</span>
+                    <div class="item-poster" :style="`background-image: url(${book.images.small})`"></div>
+                    <span class="item-title" :title="book.title">{{ book.title }}</span>
                     <div class="item-rating">
-                        <rater :rate="book.rating.average"></rater>
+                        <rater :rate="+book.rating.average"></rater>
                     </div>
                 </router-link>
             </li>
@@ -105,6 +105,8 @@ export default {
             margin-top: .6rem;
             line-height: .94rem;
             color:black;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &-rating{
             width: 100px;
